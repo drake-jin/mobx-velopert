@@ -6,16 +6,16 @@ import { observable, computed, autorun, action, transaction } from 'mobx';
 
 
 class GS25 {
-  // @observable
+  @observable
   basket = [];
 
-  // @computed
+  @computed
   get total() {
     console.log('계산중니다...')    
     return this.basket.reduce((prev, curr) => prev + curr.price, 0)
   }
 
-  // @action
+  @action
   select(name, price) {
     this.basket.push({ name, price });
   }
@@ -36,10 +36,6 @@ autorun(() => {
   if (gs25.basket.length > 0) {
     console.log(gs25.basket[gs25.basket.length - 1]);
   }
-})
-
-transaction(() => {
-  gs25.select('물', 800)
   gs25.select('물', 800)
   gs25.select('포카칩', 1500)
 })
