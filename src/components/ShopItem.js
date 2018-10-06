@@ -1,13 +1,13 @@
 import React from 'react'
 import './ShopItem.scss';
 
-const ShopItem = ({ name, price, onPut }) => {
+const ShopItem = ({ item, onPut }) => {
   console.log('ShopItem ... render')
 
   return (
-    <div className="ShopItem" onClick={() => onPut(name, price)}>
-      <h4>{name}</h4>
-      <div>{price}원 </div>
+    <div className="ShopItem" onClick={() => onPut(item.name, item.price)}>
+      <h4>{item.name}</h4>
+      <div>{item.price}원 </div>
     </div>
   )
 }

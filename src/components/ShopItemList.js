@@ -26,13 +26,12 @@ const items = [
 ]
 
 // **** onPuy함수 추가됨
-
 const ShopItemList = ({ onPut }) => {
   const itemList = items.map(item => (
     <ShopItem
       key={item.name}
       onPut={onPut}
-      {...item}
+      item={item}
     />
   ))
   console.log('ShopItemList ... render')
