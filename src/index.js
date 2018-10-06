@@ -4,14 +4,13 @@ import { Provider } from 'mobx-react';
 
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import CounterStore from './stores/counter'
+import RootStore from './stores'
 
-const counter = new CounterStore(); // 스토어 인스턴스 생성
-
+const root = new RootStore()
 
 ReactDOM.render(
   (
-    <Provider counter={counter}>
+    <Provider {...root}>
       <App />
     </Provider>
   ),
